@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<form id="2c2p-payment-form" action="/Home/Test" method="POST">
+    <input type="text" name="cardnumber" data-encrypt="cardnumber" maxlength="16" placeholder="Credit Card Number"><br />
+    <input type="text" data-encrypt="month" maxlength="2" placeholder="MM"><br />
+    <input type="text" data-encrypt="year" maxlength="4" placeholder="YYYY"><br />
+    <input type="password" data-encrypt="cvv" maxlength="4" autocomplete="off" placeholder="CVV2/CVC2"><br />
+    <input type="button" onclick="Checkout()" value="send">
+</form>
+
+
+<script src="https://demo2.2c2p.com/2C2PFrontEnd/SecurePayment/api/my2c2p.1.6.9.min.js"></script>
+<script type="text/javascript">
+        function Checkout() {
+            My2c2p.submitForm("2c2p-payment-form", function (errCode, errDesc) {
+            });
+
+
+
+        }
+</script>
